@@ -1,0 +1,392 @@
+{
+    "fileTypes": [
+        "tscript"
+    ],
+    "name": "tscript",
+    "patterns": [
+        {
+            "include": "#expression"
+        }
+    ],
+    "repository": {
+        "array-literal": {
+            "begin": "\\[",
+            "beginCaptures": {
+                "0": {
+                    "name": "tscript.operators"
+                }
+            },
+            "end": "\\]",
+            "endCaptures": {
+                "0": {
+                    "name": "tscript.operators"
+                }
+            },
+            "name": "tscript.operators",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ]
+        },
+        "assignment-operator": {
+            "match": "=",
+            "name": "tscript.operators"
+        },
+        "block": {
+            "begin": "\\{",
+            "beginCaptures": {
+                "0": {
+                    "name": "tscript.operators"
+                }
+            },
+            "end": "\\}",
+            "endCaptures": {
+                "0": {
+                    "name": "tscript.operators"
+                }
+            },
+            "name": "tscript.meta.block",
+            "patterns": [
+                {
+                    "include": "#expression"
+                },
+                {
+                    "include": "#object-member"
+                }
+            ]
+        },
+        "boolean-literal": {
+            "match": "(\\s*)(?i)(true|false|yes|no)\\b",
+            "name": "tscript.boolean"
+        },
+        "comment": {
+            "name": "tscript.comment",
+            "patterns": [
+                {
+                    "include": "#comment-block"
+                },
+                {
+                    "include": "#comment-line"
+                }
+            ]
+        },
+        "comment-block": {
+            "begin": "/\\#",
+            "end": "\\#/",
+            "name": "tscript.comment.block"
+        },
+        "comment-line": {
+            "match": "(#).*$\\n?",
+            "name": "tscript.comment.line"
+        },
+        "comparison-operator": {
+            "match": "==|!=|>|<|greater|greater=|less|less=|not|\\&",
+            "name": "tscript.operators"
+        },
+        "condition-operator": {
+            "match": "\\s*(?i)(and|or)\\b",
+            "name": "tscript.operators"
+        },
+        "control-statement": {
+            "match": "\\s*(?i)(if|then|else|elseif|while|end|systemScript|reqRecording|goto|gosub|return|pause|halt|include|waiton)\\b",
+            "name": "tscript.keyword.control"
+        },
+        "user-vars": {
+            "match": "\\$([A-Za-z0-9_~!]+)",
+            "name": "tscript.user.variable"
+        },
+        "user-labels": {
+            "match": ":([A-Za-z0-9_~]+)",
+            "name": "tscript.user.labels"
+        },
+        "decl-block": {
+            "begin": "\\{",
+            "beginCaptures": {
+                "0": {
+                    "name": "tscript.operators"
+                }
+            },
+            "end": "\\}",
+            "endCaptures": {
+                "0": {
+                    "name": "tscript.operators"
+                }
+            },
+            "name": "tscript.meta.decl.block",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ]
+        },
+        "Commands": {
+            "match": "\\s*(?i)(addMenu|clearAllAvoids|clearAvoid|clearGlobals|clientMessage|closeMenu|connect|disconnect|cutLengths|cutText|delete|echo|fileExists|format|getAllCourses|getCharCode|getConsoleInput|getCourse|getDate|getDeafClients|getDirList|getDistance|getFileList|getInput|getLength|getMenuValue|getNearestWarps|getOutText|getRnd|getScriptVersion|getSector|getSectorParameter|getText|getTime|getTimer|getWord|getWordCount|getWordPos|isNumber|killAllTriggers|killTrigger|killWindow|listActiveScripts|listAvoids|listSectorParameters|load|loadGlobal|loadVar|logging|lowerCase|MakeDir|mergeText|openMenu|padLeft|padRight|processIn|processOut|read|readToArray|RemoveDir|rename|replaceText|round|saveGlobal|saveVar|send|setArray|setAvoid|setDeafClients|setDelayTrigger|setEventTrigger|setMenuHelp|setMenuKey|setMenuOptions|setMenuValue|setPrecision|setProgVar|setSectorParameter|setTextLineTrigger|setTextOutTrigger|setTextTrigger|setWindowContents|sound|splitText|stop|stripText|trim|truncate|upperCase|waitFor|window|write|Sleep)\\b",
+            "name": "tscript.commands"
+        },
+        "Library Commands": {
+            "match": "\\s*(?i)(getGameSettings|getQuickStats|getFullStatus)\\b",
+            "name": "tscript.commands.library"
+        },
+        "Depreciated": {
+            "match": "\\s*(?i)(add|branch|divide|isEqual|isGreater|isGreaterEqual|isLesser|isLesserEqual|isNotEqual|multiply|subtract|xor|setVar|ANSI_0|ANSI_1|ANSI_2|ANSI_3|ANSI_4|ANSI_5|ANSI_6|ANSI_7|ANSI_8|ANSI_9|ANSI_10|ANSI_11|ANSI_12|ANSI_13|ANSI_14|ANSI_15)\\b",
+            "name": "tscript.commands.depreciated"
+        },
+        "SystemVars": {
+            "match": "\\s*(?i)(ALPHACENTAURI|CONNECTED|CURRENTANSILINE|CURRENTLINE|CURRENTSECTOR|DATE|GAME|GAMENAME|LICENSENAME|PORT.BUILDTIME|PORT.BUYEQUIP|PORT.BUYFUEL|PORT.BUYORG|PORT.CLASS|PORT.EQUIP|PORT.EXISTS|PORT.FUEL|PORT.NAME|PORT.ORG|PORT.PERCENTEQUIP|PORT.PERCENTFUEL|PORT.PERCENTORG|PORT.UPDATED|RAWPACKET|RYLOS|SECTOR.ANOMALY|SECTOR.BACKDOORCOUNT|SECTOR.BACKDOORS|SECTOR.BEACON|SECTOR.CONSTELLATION|SECTOR.DENSITY|SECTOR.EXPLORED|SECTOR.FIGS.OWNER|SECTOR.FIGS.QUANTITY|SECTOR.FIGS.TYPE|SECTOR.LIMPETS.OWNER|SECTOR.LIMPETS.QUANTITY|SECTOR.MINES.OWNER|SECTOR.MINES.QUANTITY|SECTOR.NAVHAZ|SECTOR.PLANETCOUNT|SECTOR.PLANETS|SECTOR.SHIPCOUNT|SECTOR.SHIPS|SECTOR.TRADERCOUNT|SECTOR.TRADERS|SECTOR.UPDATED|SECTOR.WARPCOUNT|SECTOR.WARPINCOUNT|SECTOR.WARPSIN|SECTOR.WARPS|SECTORS|STARDOCK|TIME|CURRENTTURNS|CURRENTCREDITS|CURRENTFIGHTERS|CURRENTSHIELDS|CURRENTTOTALHOLDS|CURRENTOREHOLDS|CURRENTORGHOLDS|CURRENTEQUHOLDS|CURRENTCOLHOLDS|CURRENTEMPTYHOLDS|CURRENTPHOTONS|CURRENTARMIDS|CURRENTLIMPETS|CURRENTGENTORPS|CURRENTTWARPTYPE|CURRENTCLOAKS|CURRENTBEACONS|CURRENTATOMICS|CURRENTCORBOMITE|CURRENTEPROBES|CURRENTMINEDISR|CURRENTPSYCHICPROBE|CURRENTPLANETSCANNER|CURRENTSCANTYPE|CURRENTALIGNMENT|CURRENTEXPERIENCE|CURRENTCORP|CURRENTSHIPNUMBER|CURRENTSHIPCLASS|CURRENTQUICKSTATS|CURRENTANSIQUICKSTATS|ACTIVEBOT|SINGLEKEY|LOGIN.VALIDATED|SERVERTYPE|PLAYER.LOGINNAME|PLAYER.PASSWORD|PLAYER.ALIAS|PLAYER.CORPNAME|PLAYER.CORPPASS|SHIPNAME|PLANETNAME|PLAYER.SUBSPACE)\\b",
+            "name": "tscript.predefined.variable"
+        },
+        "expression": {
+            "name": "tscript.meta.expression",
+            "patterns": [
+                {
+                    "include": "#string"
+                },
+                {
+                    "include": "#comment"
+                },
+                {
+                    "include": "#literal"
+                },
+                {
+                    "include": "#paren-expression"
+                },
+                {
+                    "include": "#block"
+                },
+                {
+                    "include": "#comparison-operator"
+                },
+                {
+                    "include": "#condition-operator"
+                },
+                {
+                    "include": "#manipulative-operator"
+                },
+                {
+                    "include": "#assignment-operator"
+                },
+                {
+                    "include": "#control-statement"
+                },
+                {
+                    "include": "#user-vars"
+                },
+                {
+                    "include": "#user-labels"
+                },
+                {
+                    "include": "#statements"
+                },
+                {
+                    "include": "#declaration"
+                }
+            ]
+        },
+        "statements": {
+            "name": "tscript.meta.expression",
+            "patterns": [
+                {
+                    "include": "#Commands"
+                },
+                {
+                    "include": "#Library Commands"
+                },
+                {
+                    "include": "#Depreciated"
+                },
+                {
+                    "include": "#SystemVars"
+                }
+            ]
+        },
+        "declaration": {
+            "name": "tscript.meta.declaration",
+            "patterns": [
+                {
+                    "include": "#fnc-declaration"
+                },
+                {
+                    "include": "#fnc-declaration-compile"
+                },
+                {
+                    "include": "#var-declaration-priv"
+                },
+                {
+                    "include": "#var-declaration"
+                }
+            ]
+        },
+        "var-declaration": {
+            "begin": "([_a-zA-Z_0-9]+)(\\s*)(=+)",
+            "beginCaptures": {
+                "1": {
+                    "name": "tscript.user.variable"
+                },
+                "3": {
+                    "name": "tscript.keyword.operator.assignment"
+                }
+            },
+            "end": " |;|{|}|\t|=|(|)|[|]",
+            "endCaptures": {
+                "1": {
+                    "name": "tscript.meta.brace.curly"
+                }
+            },
+            "name": "tscript.meta.declaration.object"
+        },
+        "var-declaration-priv": {
+            "begin": "(_+)([_a-zA-Z_0-9]+)(\\s*)(=+)",
+            "beginCaptures": {
+                "1": {
+                    "name": "tscript.variable.other.private"
+                },
+                "2": {
+                    "name": "tscript.variable.other.private"
+                },
+                "4": {
+                    "name": "tscript.keyword.operator.assignment"
+                }
+            },
+            "end": " |;|{|}|\t|=|(|)|[|]",
+            "endCaptures": {
+                "1": {
+                    "name": "tscript.meta.brace.curly"
+                }
+            },
+            "name": "tscript.meta.declaration.object"
+        },
+        "fnc-declaration": {
+            "begin": "(\\s*)([_a-zA-Z_0-9]+)(\\s*)(=)(\\s*)({)",
+            "beginCaptures": {
+                "2": {
+                    "name": "tscript.support.function"
+                },
+                "4": {
+                    "name": "tscript.keyword.operator.assignment"
+                },
+                "6": {
+                    "name": "tscript.meta.brace.curly"
+                }
+            },
+            "end": " |;|{|}|\t",
+            "endCaptures": {
+                "1": {
+                    "name": "tscript.meta.brace.curly"
+                }
+            },
+            "name": "tscript.meta.declaration.object"
+        },
+        "fnc-declaration-compile": {
+            "begin": "(\\s*)([_a-zA-Z_0-9]+)(\\s*)(=)(\\s*)(compileFinal|compile)",
+            "beginCaptures": {
+                "2": {
+                    "name": "tscript.support.function"
+                },
+                "4": {
+                    "name": "tscript.keyword.operator.assignment"
+                },
+                "6": {
+                    "name": "tscript.meta.function-call"
+                }
+            },
+            "end": " |;|{|}|\t",
+            "endCaptures": {
+                "1": {
+                    "name": "tscript.meta.brace.curly"
+                }
+            },
+            "name": "tscript.meta.declaration.object"
+        },
+        "literal": {
+            "name": "tscript.literal",
+            "patterns": [
+                {
+                    "include": "#numeric-literal"
+                },
+                {
+                    "include": "#boolean-literal"
+                },
+                {
+                    "include": "#null-literal"
+                },
+                {
+                    "include": "#array-literal"
+                }
+            ]
+        },
+        "manipulative-operator": {
+            "match": "\\*|/|\\-|\\+|%|\\^|\\%|:=|\\||!",
+            "name": "tscript.operators"
+        },
+        "null-literal": {
+            "match": "\\b(null|nil)\\b",
+            "name": "tscript.constant.language.null"
+        },
+        "numeric-literal": {
+            "match": "\\s*(?<=[^$])((0(x|X)[0-9a-fA-F]+)|([0-9]+(\\.[0-9]+)?))\\b",
+            "name": "tscript.constant.numeric"
+        },
+        "paren-expression": {
+            "begin": "\\(",
+            "beginCaptures": {
+                "0": {
+                    "name": "tscript.operators"
+                }
+            },
+            "end": "\\)",
+            "endCaptures": {
+                "0": {
+                    "name": "tscript.operators"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ]
+        },
+        "qstring-single": {
+            "begin": "'",
+            "end": "'",
+            "name": "tscript.string.single"
+        },
+        "qstring-double": {
+            "begin": "\"",
+            "end": "\"",
+            "name": "tscript.string.double",
+            "patterns": [
+                {
+                    "match": "~([A-Za-z0-9~!])",
+                    "name": "tscript.predefined.variable"
+                },
+                {
+                    "match": "\\*",
+                    "name": "tscript.keyword.control"
+                },
+                {
+                    "begin": "{",
+                    "end": "}",
+                    "name": "tscript.user.variable",
+					"patterns": [
+						{
+							"include": "#SystemVars"
+						}
+					]
+                }
+            ]
+        },
+        "string": {
+            "name": "tscript.string",
+            "patterns": [
+                {
+                    "include": "#qstring-single"
+                },
+                {
+                    "include": "#qstring-double"
+                }
+            ]
+        }
+    },
+    "scopeName": "source.tscript"
+}

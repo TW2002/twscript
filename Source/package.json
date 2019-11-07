@@ -1,0 +1,40 @@
+{
+    "name": "tscript",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": ">=0.9.0-pre.1"
+    },
+    "publisher": "microblaster",
+	"activationEvents": ["onCommand:extension.helloWorld"],
+	"main": "./out/extension.ts",
+    "contributes": {
+        "languages": [{
+            "id": "tscript",
+            "aliases": ["TradeWars Script", "TWXSCRIPT"],
+            "extensions": [".ts"]
+        }],
+        "grammars": [{
+            "language": "tscript",
+            "scopeName": "source.tscript",
+            "path": "./syntaxes/tscript.json"
+        }],
+		"snippets": [
+			{
+				"language": "tscript",
+				"path": "./snippets/twx.json"
+			}
+		],
+		"themes": [
+			{
+				"label": "[TWX] Dark Theme",
+				"uiTheme": "vs-dark",
+				"path": "./themes/tscript.tmTheme"
+            }
+        ],
+        "commands": [{
+            "command": "extension.helloWorld",
+            "title": "Hello World"
+        }]			
+        
+    }
+}
