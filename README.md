@@ -1,2 +1,26 @@
-# tscript
-A VS Code Language extention for TradeWars Script
+## What is tscript?
+
+**script** is a [TradeWars 2002 (TW2002)](http://www.eisonline.com) scripting language used by the [TWX Proxy](https://github.com/TW2002/TWX-Sharp).
+
+This [VS Code](https://code.visualstudio.com/) extension integrates the tscript language into the VS Code IDE for files with a .ts/.tws extention. 
+
+## How do I install tscript?
+
+Installation from the marketplace is coming soon.
+
+Manual Installation:
+
+- Install VS Code from [https://code.visualstudio.com](https://code.visualstudio.com/).
+
+- Navigate to your VS Code extensions folder.
+    Windows: %USERPROFILE%/.vscode/extensions.
+    Mac/Linux: $HOME/.vscode/extensions.
+
+- Dowload this extention, and unzip into folder under the extensions folder called "tscript".
+
+## Features
+
+- Linter - analyzes source code to flag programming errors, bugs, stylistic errors, and suspicious constructs.
+- Snippets - Just a few (i.e. comments, if/then, triggers). Need to build on this.
+- Themes - Well **one** dark and exuberant 80's sixteen color BBS style theme anyway.
+- Debugger - Coming Soon
