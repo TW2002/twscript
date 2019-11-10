@@ -12,9 +12,9 @@ Manual Installation:
 
 - Install VS Code from [https://code.visualstudio.com](https://code.visualstudio.com/).
 
-- Navigate to your VS Code extensions folder.
-    Windows: %USERPROFILE%/.vscode/extensions.
-    Mac/Linux: $HOME/.vscode/extensions.
+- Navigate to your VS Code extensions folder.<BR>
+    Windows: %USERPROFILE%/.vscode/extensions.<BR>
+    Mac/Linux: $HOME/.vscode/extensions.<BR>
 
 - Dowload this extention, and unzip into folder under the extensions folder called "tscript".
 
