@@ -1,12 +1,30 @@
 {
     "name": "tscript",
-    "version": "0.0.1",
+    "displayName": "TW2002 Script Language",
+    "description": "TW2002 Script Language support for VS Code.",
+    "version": "0.19.45",
     "engines": {
         "vscode": ">=0.9.0-pre.1"
     },
     "publisher": "microblaster",
-	"activationEvents": ["onCommand:extension.helloWorld"],
 	"main": "./out/extension.ts",
+	"license": "MIT License",
+	"homepage": "https://github.com/TW2002/tscript",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TW2002/tscript.git"
+	},
+	"bugs": {
+		"url": "https://github.com/TW2002/tscript/issues",
+		"email": "dmc@it1.biz"
+	},
+	"categories": [
+		"Programming Languages",
+		"Snippets",
+		"Themes",
+		"Linters",
+		"Debuggers"
+],	
     "contributes": {
         "languages": [{
             "id": "tscript",
