@@ -24,3 +24,7 @@ Manual Installation:
 - Snippets - Just a few (i.e. comments, if/then, triggers). Need to build on this.
 - Themes - Well, **one** dark and exuberant 80's sixteen color BBS style theme anyway.
 - Debugger - Coming Soon
+
+## Screenshot
+
+![image](https://user-images.githubusercontent.com/3355654/68539985-df7d0180-0350-11ea-8020-42f3079f54df.png)
