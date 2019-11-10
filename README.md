@@ -22,5 +22,5 @@ Manual Installation:
 
 - Linter - analyzes source code to flag programming errors, bugs, stylistic errors, and suspicious constructs.
 - Snippets - Just a few (i.e. comments, if/then, triggers). Need to build on this.
-- Themes - Well **one** dark and exuberant 80's sixteen color BBS style theme anyway.
+- Themes - Well, **one** dark and exuberant 80's sixteen color BBS style theme anyway.
 - Debugger - Coming Soon
