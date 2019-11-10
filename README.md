@@ -28,4 +28,4 @@ Manual Installation:
 ## Screenshot
 
 ![image](https://user-images.githubusercontent.com/3355654/68539985-df7d0180-0350-11ea-8020-42f3079f54df.png)
-I hope I didn't go to overboard with this exuberant 80's sixteen color BBS style theme!
+I hope I didn't go too overboard with this exuberant 80's sixteen color BBS style theme!
