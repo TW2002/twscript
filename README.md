@@ -1,6 +1,6 @@
 ## What is tscript?
 
-**tscript** is a [TradeWars 2002 (TW2002)](http://www.eisonline.com) scripting language used by the [TWX Proxy](https://github.com/TW2002/TWX-Sharp).
+**tscript** is a [TradeWars 2002 (TW2002)](http://www.eisonline.com) scripting language used by the [TWX Proxy](https://github.com/TW2002/TWX-Sharp) helper application.
 
 This [VS Code](https://code.visualstudio.com/) extension integrates the tscript language into the VS Code IDE for files with a .ts/.tws extention. 
 
