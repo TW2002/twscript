@@ -18,7 +18,7 @@ Manual Installation:
 
 - Dowload this extention, and unzip into folder under the extensions folder called "tscript".
 
-- Open VS Code, and open the Color Theme picker with File > Preferences > Color Theme. ...<br>
+- Open VS Code, and open the Color Theme picker with File > Preferences > Color Theme.<br>
    You can also use the keyboard shortcut Ctrl+K Ctrl+T to display the picker.<br>
    Select "[TWX] Dark Theme" from the picker.
 
