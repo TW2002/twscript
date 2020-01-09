@@ -1,8 +1,8 @@
 {
     "fileTypes": [
-        "tscript"
+        "twscript"
     ],
-    "name": "tscript",
+    "name": "twscript",
     "patterns": [
         {
             "include": "#expression"
@@ -13,16 +13,16 @@
             "begin": "\\[",
             "beginCaptures": {
                 "0": {
-                    "name": "tscript.operators"
+                    "name": "twscript.operators"
                 }
             },
             "end": "\\]",
             "endCaptures": {
                 "0": {
-                    "name": "tscript.operators"
+                    "name": "twscript.operators"
                 }
             },
-            "name": "tscript.operators",
+            "name": "twscript.operators",
             "patterns": [
                 {
                     "include": "#expression"
@@ -31,22 +31,22 @@
         },
         "assignment-operator": {
             "match": "=",
-            "name": "tscript.operators"
+            "name": "twscript.operators"
         },
         "block": {
             "begin": "\\{",
             "beginCaptures": {
                 "0": {
-                    "name": "tscript.operators"
+                    "name": "twscript.operators"
                 }
             },
             "end": "\\}",
             "endCaptures": {
                 "0": {
-                    "name": "tscript.operators"
+                    "name": "twscript.operators"
                 }
             },
-            "name": "meta.block.tscript",
+            "name": "meta.block.twscript",
             "patterns": [
                 {
                     "include": "#expression"
@@ -58,10 +58,10 @@
         },
         "boolean-literal": {
             "match": "(\\s*)(?i)(true|false|yes|no)\\b",
-            "name": "tscript.boolean"
+            "name": "twscript.boolean"
         },
         "comment": {
-            "name": "comment.tscript",
+            "name": "comment.twscript",
             "patterns": [
                 {
                     "include": "#comment-block"
@@ -74,46 +74,46 @@
         "comment-block": {
             "begin": "/\\#",
             "end": "\\#/",
-            "name": "comment.block.tscript"
+            "name": "comment.block.twscript"
         },
         "comment-line": {
             "match": "(#).*$\\n?",
-            "name": "comment.line.tscript"
+            "name": "comment.line.twscript"
         },
         "comparison-operator": {
             "match": "==|!=|>|<|greater|greater=|less|less=|not|\\&",
-            "name": "tscript.operators"
+            "name": "twscript.operators"
         },
         "condition-operator": {
             "match": "\\s*(?i)(and|or)\\b",
-            "name": "tscript.operators"
+            "name": "twscript.operators"
         },
         "control-statement": {
             "match": "\\s*(?i)(if|then|else|elseif|while|end|systemScript|reqRecording|goto|gosub|return|pause|halt|disconnect|include|waiton)\\b",
-            "name": "keyword.control.tscript"
+            "name": "keyword.control.twscript"
         },
         "user-vars": {
             "match": "\\$([A-Za-z0-9_~]+)",
-            "name": "tscript.user.variable"
+            "name": "twscript.user.variable"
         },
         "user-labels": {
             "match": ":([A-Za-z0-9_~]+)",
-            "name": "tscript.user.labels"
+            "name": "twscript.user.labels"
         },
         "decl-block": {
             "begin": "\\{",
             "beginCaptures": {
                 "0": {
-                    "name": "tscript.operators"
+                    "name": "twscript.operators"
                 }
             },
             "end": "\\}",
             "endCaptures": {
                 "0": {
-                    "name": "tscript.operators"
+                    "name": "twscript.operators"
                 }
             },
-            "name": "meta.decl.block.tscript",
+            "name": "meta.decl.block.twscript",
             "patterns": [
                 {
                     "include": "#expression"
@@ -121,19 +121,19 @@
             ]
         },
         "Commands": {
-            "match": "\\s*(?i)(addMenu|clearAllAvoids|clearAvoid|clearGlobals|clientMessage|closeMenu|connect|cutLengths|cutText|delete|echo|fileExists|format|getAllCourses|getCharCode|getConsoleInput|getCourse|getDate|getDeafClients|getDirList|getDistance|getFileList|getInput|getLength|getMenuValue|getNearestWarps|getOutText|getRnd|getScriptVersion|getSector|getSectorParameter|getText|getTime|getTimer|getWord|getWordCount|getWordPos|isNumber|killAllTriggers|killTrigger|killWindow|listActiveScripts|listAvoids|listSectorParameters|load|loadGlobal|loadVar|logging|lowerCase|MakeDir|mergeText|openMenu|padLeft|padRight|processIn|processOut|read|readToArray|RemoveDir|rename|replaceText|round|saveGlobal|saveVar|send|setArray|setAvoid|setDeafClients|setDelayTrigger|setEventTrigger|setMenuHelp|setMenuKey|setMenuOptions|setMenuValue|setPrecision|setProgVar|setSectorParameter|setTextLineTrigger|setTextOutTrigger|setTextTrigger|setWindowContents|sound|splitText|stop|stripText|trim|truncate|upperCase|waitFor|window|write)\\b",
-            "name": "tscript.commands"
+            "match": "\\s*(?i)(addMenu|clearAllAvoids|clearAvoid|clearGlobals|clientMessage|closeMenu|connect|cutLengths|cutText|delete|echo|fileExists|format|getAllCourses|getCharCode|getConsoleInput|getCourse|getDate|getDeafClients|getDirList|getDistance|getFileList|getInput|getLength|getMenuValue|getNearestWarps|getOutText|getRnd|getwscriptVersion|getSector|getSectorParameter|getText|getTime|getTimer|getWord|getWordCount|getWordPos|isNumber|killAllTriggers|killTrigger|killWindow|listActiveScripts|listAvoids|listSectorParameters|load|loadGlobal|loadVar|logging|lowerCase|MakeDir|mergeText|openMenu|padLeft|padRight|processIn|processOut|read|readToArray|RemoveDir|rename|replaceText|round|saveGlobal|saveVar|send|setArray|setAvoid|setDeafClients|setDelayTrigger|setEventTrigger|setMenuHelp|setMenuKey|setMenuOptions|setMenuValue|setPrecision|setProgVar|setSectorParameter|setTextLineTrigger|setTextOutTrigger|setTextTrigger|setWindowContents|sound|splitText|stop|stripText|trim|truncate|upperCase|waitFor|window|write)\\b",
+            "name": "twscript.commands"
         },
         "Depreciated": {
             "match": "\\s*(?i)(add|branch|divide|isEqual|isGreater|isGreaterEqual|isLesser|isLesserEqual|isNotEqual|multiply|subtract|xor|setVar)\\b",
-            "name": "tscript.Depreciated"
+            "name": "twscript.Depreciated"
         },
         "SystemVars": {
             "match": "\\s*(?i)(ALPHACENTAURI|ANSI_0|ANSI_1|ANSI_2|ANSI_3|ANSI_4|ANSI_5|ANSI_6|ANSI_7|ANSI_8|ANSI_9|ANSI_10|ANSI_11|ANSI_12|ANSI_13|ANSI_14|ANSI_15|CONNECTED|CURRENTANSILINE|CURRENTLINE|CURRENTSECTOR|DATE|GAME|GAMENAME|LICENSENAME|LOGINNAME|PASSWORD|PORT.BUILDTIME|PORT.BUYEQUIP|PORT.BUYFUEL|PORT.BUYORG|PORT.CLASS|PORT.EQUIP|PORT.EXISTS|PORT.FUEL|PORT.NAME|PORT.ORG|PORT.PERCENTEQUIP|PORT.PERCENTFUEL|PORT.PERCENTORG|PORT.UPDATED|RAWPACKET|RYLOS|SECTOR.ANOMALY|SECTOR.BACKDOORCOUNT|SECTOR.BACKDOORS|SECTOR.BEACON|SECTOR.CONSTELLATION|SECTOR.DENSITY|SECTOR.EXPLORED|SECTOR.FIGS.OWNER|SECTOR.FIGS.QUANTITY|SECTOR.FIGS.TYPE|SECTOR.LIMPETS.OWNER|SECTOR.LIMPETS.QUANTITY|SECTOR.MINES.OWNER|SECTOR.MINES.QUANTITY|SECTOR.NAVHAZ|SECTOR.PLANETCOUNT|SECTOR.PLANETS|SECTOR.SHIPCOUNT|SECTOR.SHIPS|SECTOR.TRADERCOUNT|SECTOR.TRADERS|SECTOR.UPDATED|SECTOR.WARPCOUNT|SECTOR.WARPINCOUNT|SECTOR.WARPSIN|SECTOR.WARPS|SECTORS|STARDOCK|TIME|CURRENTTURNS|CURRENTCREDITS|CURRENTFIGHTERS|CURRENTSHIELDS|CURRENTTOTALHOLDS|CURRENTOREHOLDS|CURRENTORGHOLDS|CURRENTEQUHOLDS|CURRENTCOLHOLDS|CURRENTEMPTYHOLDS|CURRENTPHOTONS|CURRENTARMIDS|CURRENTLIMPETS|CURRENTGENTORPS|CURRENTTWARPTYPE|CURRENTCLOAKS|CURRENTBEACONS|CURRENTATOMICS|CURRENTCORBOMITE|CURRENTEPROBES|CURRENTMINEDISR|CURRENTPSYCHICPROBE|CURRENTPLANETSCANNER|CURRENTSCANTYPE|CURRENTALIGNMENT|CURRENTEXPERIENCE|CURRENTCORP|CURRENTSHIPNUMBER|CURRENTSHIPCLASS|CURRENTQUICKSTATS|CURRENTANSIQUICKSTATS|ACTIVEBOT|SINGLEKEY)\\b",
-            "name": "tscript.predefined.variable"
+            "name": "twscript.predefined.variable"
         },
         "expression": {
-            "name": "meta.expression.tscript",
+            "name": "meta.expression.twscript",
             "patterns": [
                 {
                     "include": "#string"
@@ -180,7 +180,7 @@
             ]
         },
         "statements": {
-            "name": "meta.expression.tscript",
+            "name": "meta.expression.twscript",
             "patterns": [
                 {
                     "include": "#Commands"
@@ -194,7 +194,7 @@
             ]
         },
         "declaration": {
-            "name": "meta.declaration.tscript",
+            "name": "meta.declaration.twscript",
             "patterns": [
                 {
                     "include": "#fnc-declaration"
@@ -214,85 +214,85 @@
             "begin": "([_a-zA-Z_0-9]+)(\\s*)(=+)",
             "beginCaptures": {
                 "1": {
-                    "name": "variable.other.tscript"
+                    "name": "variable.other.twscript"
                 },
                 "3": {
-                    "name": "keyword.operator.assignment.tscript"
+                    "name": "keyword.operator.assignment.twscript"
                 }
             },
             "end": " |;|{|}|\t|=|(|)|[|]",
             "endCaptures": {
                 "1": {
-                    "name": "meta.brace.curly.tscript"
+                    "name": "meta.brace.curly.twscript"
                 }
             },
-            "name": "meta.declaration.object.tscript"
+            "name": "meta.declaration.object.twscript"
         },
         "var-declaration-priv": {
             "begin": "(_+)([_a-zA-Z_0-9]+)(\\s*)(=+)",
             "beginCaptures": {
                 "1": {
-                    "name": "variable.other.private.tscript"
+                    "name": "variable.other.private.twscript"
                 },
                 "2": {
-                    "name": "variable.other.private.tscript"
+                    "name": "variable.other.private.twscript"
                 },
                 "4": {
-                    "name": "keyword.operator.assignment.tscript"
+                    "name": "keyword.operator.assignment.twscript"
                 }
             },
             "end": " |;|{|}|\t|=|(|)|[|]",
             "endCaptures": {
                 "1": {
-                    "name": "meta.brace.curly.tscript"
+                    "name": "meta.brace.curly.twscript"
                 }
             },
-            "name": "meta.declaration.object.tscript"
+            "name": "meta.declaration.object.twscript"
         },
         "fnc-declaration": {
             "begin": "(\\s*)([_a-zA-Z_0-9]+)(\\s*)(=)(\\s*)({)",
             "beginCaptures": {
                 "2": {
-                    "name": "support.function.tscript"
+                    "name": "support.function.twscript"
                 },
                 "4": {
-                    "name": "keyword.operator.assignment.tscript"
+                    "name": "keyword.operator.assignment.twscript"
                 },
                 "6": {
-                    "name": "meta.brace.curly.tscript"
+                    "name": "meta.brace.curly.twscript"
                 }
             },
             "end": " |;|{|}|\t",
             "endCaptures": {
                 "1": {
-                    "name": "meta.brace.curly.tscript"
+                    "name": "meta.brace.curly.twscript"
                 }
             },
-            "name": "meta.declaration.object.tscript"
+            "name": "meta.declaration.object.twscript"
         },
         "fnc-declaration-compile": {
             "begin": "(\\s*)([_a-zA-Z_0-9]+)(\\s*)(=)(\\s*)(compileFinal|compile)",
             "beginCaptures": {
                 "2": {
-                    "name": "support.function.tscript"
+                    "name": "support.function.twscript"
                 },
                 "4": {
-                    "name": "keyword.operator.assignment.tscript"
+                    "name": "keyword.operator.assignment.twscript"
                 },
                 "6": {
-                    "name": "meta.function-call.tscript"
+                    "name": "meta.function-call.twscript"
                 }
             },
             "end": " |;|{|}|\t",
             "endCaptures": {
                 "1": {
-                    "name": "meta.brace.curly.tscript"
+                    "name": "meta.brace.curly.twscript"
                 }
             },
-            "name": "meta.declaration.object.tscript"
+            "name": "meta.declaration.object.twscript"
         },
         "literal": {
-            "name": "literal.tscript",
+            "name": "literal.twscript",
             "patterns": [
                 {
                     "include": "#numeric-literal"
@@ -310,27 +310,27 @@
         },
         "manipulative-operator": {
             "match": "\\*|/|\\-|\\+|%|\\^|\\%|:=|\\||!",
-            "name": "tscript.operators"
+            "name": "twscript.operators"
         },
         "null-literal": {
             "match": "\\b(null|nil)\\b",
-            "name": "constant.language.null.tscript"
+            "name": "constant.language.null.twscript"
         },
         "numeric-literal": {
             "match": "\\s*(?<=[^$])((0(x|X)[0-9a-fA-F]+)|([0-9]+(\\.[0-9]+)?))\\b",
-            "name": "constant.numeric.tscript"
+            "name": "constant.numeric.twscript"
         },
         "paren-expression": {
             "begin": "\\(",
             "beginCaptures": {
                 "0": {
-                    "name": "tscript.operators"
+                    "name": "twscript.operators"
                 }
             },
             "end": "\\)",
             "endCaptures": {
                 "0": {
-                    "name": "tscript.operators"
+                    "name": "twscript.operators"
                 }
             },
             "patterns": [
@@ -342,15 +342,15 @@
         "qstring-double": {
             "begin": "\"",
             "end": "\"",
-            "name": "string.double.tscript"
+            "name": "string.double.twscript"
         },
         "qstring-single": {
             "begin": "'",
             "end": "'",
-            "name": "string.single.tscript"
+            "name": "string.single.twscript"
         },
         "string": {
-            "name": "string.tscript",
+            "name": "string.twscript",
             "patterns": [
                 {
                     "include": "#qstring-single"
@@ -361,5 +361,5 @@
             ]
         }
     },
-    "scopeName": "source.tscript"
+    "scopeName": "source.twscript"
 }

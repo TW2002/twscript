@@ -1,0 +1,36 @@
+{
+    "name": "twscript",
+    "version": "20.20.1",
+    "engines": {
+        "vscode": ">=0.9.0-pre.1"
+    },
+    "publisher": "MicroBlaster",
+	"activationEvents": ["onCommand:extension.helloWorld"],
+	"main": "./out/extension.ts",
+    "contributes": {
+        "languages": [{
+            "id": "twscript",
+            "aliases": ["TradeWars Script", "TWXSCRIPT"],
+            "extensions": [".tws", ".ts"]
+        }],
+        "grammars": [{
+            "language": "twscript",
+            "scopeName": "source.twscript",
+            "path": "./syntaxes/twscript.json"
+        }],
+		"snippets": [
+			{
+				"language": "twscript",
+				"path": "./snippets/twscript.json"
+			}
+		],
+		"themes": [
+			{
+				"label": "[TWX] Dark Theme",
+				"uiTheme": "vs-dark",
+				"path": "./themes/twscript.tmTheme"
+            }
+        ]			
+        
+    }
+}

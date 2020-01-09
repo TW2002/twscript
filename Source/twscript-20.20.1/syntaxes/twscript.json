@@ -1,8 +1,8 @@
 {
     "fileTypes": [
-        "tscript"
+        "twscript"
     ],
-    "name": "tscript",
+    "name": "twscript",
     "patterns": [
         {
             "include": "#expression"
@@ -13,16 +13,16 @@
             "begin": "\\[",
             "beginCaptures": {
                 "0": {
-                    "name": "tscript.operators"
+                    "name": "twscript.operators"
                 }
             },
             "end": "\\]",
             "endCaptures": {
                 "0": {
-                    "name": "tscript.operators"
+                    "name": "twscript.operators"
                 }
             },
-            "name": "tscript.operators",
+            "name": "twscript.operators",
             "patterns": [
                 {
                     "include": "#expression"
@@ -31,22 +31,22 @@
         },
         "assignment-operator": {
             "match": "=",
-            "name": "tscript.operators"
+            "name": "twscript.operators"
         },
         "block": {
             "begin": "\\{",
             "beginCaptures": {
                 "0": {
-                    "name": "tscript.operators"
+                    "name": "twscript.operators"
                 }
             },
             "end": "\\}",
             "endCaptures": {
                 "0": {
-                    "name": "tscript.operators"
+                    "name": "twscript.operators"
                 }
             },
-            "name": "tscript.meta.block",
+            "name": "twscript.meta.block",
             "patterns": [
                 {
                     "include": "#expression"
@@ -58,62 +58,69 @@
         },
         "boolean-literal": {
             "match": "(\\s*)(?i)(true|false|yes|no)\\b",
-            "name": "tscript.boolean"
+            "name": "twscript.boolean"
         },
         "comment": {
-            "name": "tscript.comment",
+            "name": "twscript.comment",
             "patterns": [
                 {
                     "include": "#comment-block"
                 },
                 {
                     "include": "#comment-line"
+                },
+                {
+                    "include": "#comment-inline"
                 }
             ]
         },
         "comment-block": {
             "begin": "/\\#",
             "end": "\\#/",
-            "name": "tscript.comment.block"
+            "name": "twscript.comment.block"
         },
         "comment-line": {
             "match": "(#).*$\\n?",
-            "name": "tscript.comment.line"
+            "name": "twscript.comment.line"
+        },
+        "comment-inline": {
+            "match": "(//).*$\\n?",
+            "name": "twscript.comment.line"
         },
         "comparison-operator": {
             "match": "==|!=|>|<|greater|greater=|less|less=|not|\\&",
-            "name": "tscript.operators"
+            "name": "twscript.operators"
         },
         "condition-operator": {
             "match": "\\s*(?i)(and|or)\\b",
-            "name": "tscript.operators"
+            "name": "twscript.operators"
         },
         "control-statement": {
             "match": "\\s*(?i)(if|then|else|elseif|while|end|systemScript|reqRecording|goto|gosub|return|pause|halt|include|waiton)\\b",
-            "name": "tscript.keyword.control"
+            "name": "twscript.keyword.control"
         },
         "user-vars": {
             "match": "\\$([A-Za-z0-9_~!]+)",
-            "name": "tscript.user.variable"
+            "name": "twscript.user.variable"
         },
         "user-labels": {
             "match": ":([A-Za-z0-9_~]+)",
-            "name": "tscript.user.labels"
+            "name": "twscript.user.labels"
         },
         "decl-block": {
             "begin": "\\{",
             "beginCaptures": {
                 "0": {
-                    "name": "tscript.operators"
+                    "name": "twscript.operators"
                 }
             },
             "end": "\\}",
             "endCaptures": {
                 "0": {
-                    "name": "tscript.operators"
+                    "name": "twscript.operators"
                 }
             },
-            "name": "tscript.meta.decl.block",
+            "name": "twscript.meta.decl.block",
             "patterns": [
                 {
                     "include": "#expression"
@@ -121,23 +128,23 @@
             ]
         },
         "Commands": {
-            "match": "\\s*(?i)(addMenu|clearAllAvoids|clearAvoid|clearGlobals|clientMessage|closeMenu|connect|disconnect|clearGlobals|clearQuickText|copyDatabase|createDatabase|cutLengths|cutText|delete|deleteDatabase|echo|editDatabase|fileExists|format|formatString|getAllCourses|getCharCode|getConsoleInput|getCourse|getDate|getDeafClients|getDirList|getDistance|getFileList|getInput|getLength|getMenuValue|getNearestWarps|getOutText|getRnd|getScriptVersion|getSector|getSectorParameter|getText|getTime|getTimer|getWord|getWordCount|getWordPos|isNumber|killAllTriggers|killTrigger|killWindow|listActiveScripts|listAvoids|listDatabases|listSectorParameters|load|loadGlobal|loadVar|logging|lowerCase|MakeDir|mergeText|openMenu|padLeft|padRight|processIn|processOut|read|readToArray|RemoveDir|rename|replaceText|round|selectDatabase|saveGlobal|saveVar|send|setArray|SetAutoTrigger|setAvoid|setDeafClients|setDelayTrigger|setEventTrigger|setMenuHelp|setMenuKey|setMenuOptions|setMenuValue|setPrecision|setProgVar|setQuickText|setSectorParameter|setTextLineTrigger|setTextOutTrigger|setTextTrigger|setWindowContents|sound|sortArray|splitText|stop|stripANSI|stripText|switchBot|trim|truncate|upperCase|waitFor|window|write|Sleep)\\b",
-            "name": "tscript.commands"
+            "match": "\\s*(?i)(addMenu|addQuickText|clearAllAvoids|clearAvoid|clearGlobals|clientMessage|closeMenu|connect|dirExists|disconnect|clearGlobals|clearQuickText|copyDatabase|createDatabase|cutLengths|cutText|delete|deleteDatabase|echo|editDatabase|fileExists|format|formatString|getAllCourses|getCharCode|getConsoleInput|getCourse|getDate|getDeafClients|getDirList|getDistance|getFileList|getInput|getLength|getMenuValue|getNearestWarps|getOutText|getRnd|getwscriptVersion|getSector|getSectorParameter|getText|getTime|getTimer|getWord|getWordCount|getWordPos|isNumber|killAllTriggers|killTrigger|killWindow|listActiveScripts|listAvoids|listDatabases|listSectorParameters|load|loadDatabase|loadGlobal|loadVar|logging|lowerCase|MakeDir|mergeText|openMenu|padLeft|padRight|processIn|processOut|read|readToArray|RemoveDir|rename|replaceText|reqversion|round|saveGlobal|saveVar|send|setArray|SetAutoTrigger|setAvoid|setDeafClients|setDelayTrigger|setEventTrigger|setMenuHelp|setMenuKey|setMenuOptions|setMenuValue|setPrecision|setProgVar|setSectorParameter|setTextLineTrigger|setTextOutTrigger|setTextTrigger|setWindowContents|sound|sortArray|splitText|stop|stripANSI|stripText|switchBot|trim|truncate|upperCase|waitFor|window|write|Sleep)\\b",
+            "name": "twscript.commands"
         },
         "Library Commands": {
             "match": "\\s*(?i)(getGameSettings|getQuickStats|getFullStatus)\\b",
-            "name": "tscript.commands.library"
+            "name": "twscript.commands.library"
         },
         "Depreciated": {
             "match": "\\s*(?i)(add|branch|divide|isEqual|isGreater|isGreaterEqual|isLesser|isLesserEqual|isNotEqual|multiply|subtract|xor|setVar|ANSI_0|ANSI_1|ANSI_2|ANSI_3|ANSI_4|ANSI_5|ANSI_6|ANSI_7|ANSI_8|ANSI_9|ANSI_10|ANSI_11|ANSI_12|ANSI_13|ANSI_14|ANSI_15)\\b",
-            "name": "tscript.commands.depreciated"
+            "name": "twscript.commands.depreciated"
         },
         "SystemVars": {
             "match": "\\s*(?i)(ALPHACENTAURI|CONNECTED|CURRENTANSILINE|CURRENTLINE|CURRENTSECTOR|DATE|GAME|GAMENAME|LICENSENAME|PORT.BUILDTIME|PORT.BUYEQUIP|PORT.BUYFUEL|PORT.BUYORG|PORT.CLASS|PORT.EQUIP|PORT.EXISTS|PORT.FUEL|PORT.NAME|PORT.ORG|PORT.PERCENTEQUIP|PORT.PERCENTFUEL|PORT.PERCENTORG|PORT.UPDATED|RAWPACKET|RYLOS|SECTOR.ANOMALY|SECTOR.BACKDOORCOUNT|SECTOR.BACKDOORS|SECTOR.BEACON|SECTOR.CONSTELLATION|SECTOR.DENSITY|SECTOR.EXPLORED|SECTOR.FIGS.OWNER|SECTOR.FIGS.QUANTITY|SECTOR.FIGS.TYPE|SECTOR.LIMPETS.OWNER|SECTOR.LIMPETS.QUANTITY|SECTOR.MINES.OWNER|SECTOR.MINES.QUANTITY|SECTOR.NAVHAZ|SECTOR.PLANETCOUNT|SECTOR.PLANETS|SECTOR.SHIPCOUNT|SECTOR.SHIPS|SECTOR.TRADERCOUNT|SECTOR.TRADERS|SECTOR.UPDATED|SECTOR.WARPCOUNT|SECTOR.WARPINCOUNT|SECTOR.WARPSIN|SECTOR.WARPS|SECTORS|STARDOCK|TIME|CURRENTTURNS|CURRENTCREDITS|CURRENTFIGHTERS|CURRENTSHIELDS|CURRENTTOTALHOLDS|CURRENTOREHOLDS|CURRENTORGHOLDS|CURRENTEQUHOLDS|CURRENTCOLHOLDS|CURRENTEMPTYHOLDS|CURRENTPHOTONS|CURRENTARMIDS|CURRENTLIMPETS|CURRENTGENTORPS|CURRENTTWARPTYPE|CURRENTCLOAKS|CURRENTBEACONS|CURRENTATOMICS|CURRENTCORBOMITE|CURRENTEPROBES|CURRENTMINEDISR|CURRENTPSYCHICPROBE|CURRENTPLANETSCANNER|CURRENTSCANTYPE|CURRENTALIGNMENT|CURRENTEXPERIENCE|CURRENTCORP|CURRENTSHIPNUMBER|CURRENTSHIPCLASS|CURRENTQUICKSTATS|CURRENTANSIQUICKSTATS|ACTIVEBOT|SINGLEKEY|LOGIN.VALIDATED|SERVERTYPE|PLAYER.LOGINNAME|PLAYER.PASSWORD|PLAYER.ALIAS|PLAYER.CORPNAME|PLAYER.CORPPASS|SHIPNAME|PLANETNAME|PLAYER.SUBSPACE)\\b",
-            "name": "tscript.predefined.variable"
+            "name": "twscript.predefined.variable"
         },
         "expression": {
-            "name": "tscript.meta.expression",
+            "name": "twscript.meta.expression",
             "patterns": [
                 {
                     "include": "#string"
@@ -184,7 +191,7 @@
             ]
         },
         "statements": {
-            "name": "tscript.meta.expression",
+            "name": "twscript.meta.expression",
             "patterns": [
                 {
                     "include": "#Commands"
@@ -201,7 +208,7 @@
             ]
         },
         "declaration": {
-            "name": "tscript.meta.declaration",
+            "name": "twscript.meta.declaration",
             "patterns": [
                 {
                     "include": "#fnc-declaration"
@@ -221,85 +228,85 @@
             "begin": "([_a-zA-Z_0-9]+)(\\s*)(=+)",
             "beginCaptures": {
                 "1": {
-                    "name": "tscript.user.variable"
+                    "name": "twscript.user.variable"
                 },
                 "3": {
-                    "name": "tscript.keyword.operator.assignment"
+                    "name": "twscript.keyword.operator.assignment"
                 }
             },
             "end": " |;|{|}|\t|=|(|)|[|]",
             "endCaptures": {
                 "1": {
-                    "name": "tscript.meta.brace.curly"
+                    "name": "twscript.meta.brace.curly"
                 }
             },
-            "name": "tscript.meta.declaration.object"
+            "name": "twscript.meta.declaration.object"
         },
         "var-declaration-priv": {
             "begin": "(_+)([_a-zA-Z_0-9]+)(\\s*)(=+)",
             "beginCaptures": {
                 "1": {
-                    "name": "tscript.variable.other.private"
+                    "name": "twscript.variable.other.private"
                 },
                 "2": {
-                    "name": "tscript.variable.other.private"
+                    "name": "twscript.variable.other.private"
                 },
                 "4": {
-                    "name": "tscript.keyword.operator.assignment"
+                    "name": "twscript.keyword.operator.assignment"
                 }
             },
             "end": " |;|{|}|\t|=|(|)|[|]",
             "endCaptures": {
                 "1": {
-                    "name": "tscript.meta.brace.curly"
+                    "name": "twscript.meta.brace.curly"
                 }
             },
-            "name": "tscript.meta.declaration.object"
+            "name": "twscript.meta.declaration.object"
         },
         "fnc-declaration": {
             "begin": "(\\s*)([_a-zA-Z_0-9]+)(\\s*)(=)(\\s*)({)",
             "beginCaptures": {
                 "2": {
-                    "name": "tscript.support.function"
+                    "name": "twscript.support.function"
                 },
                 "4": {
-                    "name": "tscript.keyword.operator.assignment"
+                    "name": "twscript.keyword.operator.assignment"
                 },
                 "6": {
-                    "name": "tscript.meta.brace.curly"
+                    "name": "twscript.meta.brace.curly"
                 }
             },
             "end": " |;|{|}|\t",
             "endCaptures": {
                 "1": {
-                    "name": "tscript.meta.brace.curly"
+                    "name": "twscript.meta.brace.curly"
                 }
             },
-            "name": "tscript.meta.declaration.object"
+            "name": "twscript.meta.declaration.object"
         },
         "fnc-declaration-compile": {
             "begin": "(\\s*)([_a-zA-Z_0-9]+)(\\s*)(=)(\\s*)(compileFinal|compile)",
             "beginCaptures": {
                 "2": {
-                    "name": "tscript.support.function"
+                    "name": "twscript.support.function"
                 },
                 "4": {
-                    "name": "tscript.keyword.operator.assignment"
+                    "name": "twscript.keyword.operator.assignment"
                 },
                 "6": {
-                    "name": "tscript.meta.function-call"
+                    "name": "twscript.meta.function-call"
                 }
             },
             "end": " |;|{|}|\t",
             "endCaptures": {
                 "1": {
-                    "name": "tscript.meta.brace.curly"
+                    "name": "twscript.meta.brace.curly"
                 }
             },
-            "name": "tscript.meta.declaration.object"
+            "name": "twscript.meta.declaration.object"
         },
         "literal": {
-            "name": "tscript.literal",
+            "name": "twscript.literal",
             "patterns": [
                 {
                     "include": "#numeric-literal"
@@ -317,27 +324,27 @@
         },
         "manipulative-operator": {
             "match": "\\*|/|\\-|\\+|%|\\^|\\%|:=|\\||!",
-            "name": "tscript.operators"
+            "name": "twscript.operators"
         },
         "null-literal": {
             "match": "\\b(null|nil)\\b",
-            "name": "tscript.constant.language.null"
+            "name": "twscript.constant.language.null"
         },
         "numeric-literal": {
             "match": "\\s*(?<=[^$])((0(x|X)[0-9a-fA-F]+)|([0-9]+(\\.[0-9]+)?))\\b",
-            "name": "tscript.constant.numeric"
+            "name": "twscript.constant.numeric"
         },
         "paren-expression": {
             "begin": "\\(",
             "beginCaptures": {
                 "0": {
-                    "name": "tscript.operators"
+                    "name": "twscript.operators"
                 }
             },
             "end": "\\)",
             "endCaptures": {
                 "0": {
-                    "name": "tscript.operators"
+                    "name": "twscript.operators"
                 }
             },
             "patterns": [
@@ -349,25 +356,25 @@
         "qstring-single": {
             "begin": "'",
             "end": "'",
-            "name": "tscript.string.single"
+            "name": "twscript.string.single"
         },
         "qstring-double": {
             "begin": "\"",
             "end": "\"",
-            "name": "tscript.string.double",
+            "name": "twscript.string.double",
             "patterns": [
                 {
-                    "match": "~([A-Za-z0-9~!])",
-                    "name": "tscript.predefined.variable"
+                    "match": "~([A-Za-z0-9~!@#$%^&*])",
+                    "name": "twscript.predefined.variable"
                 },
                 {
                     "match": "\\*",
-                    "name": "tscript.keyword.control"
+                    "name": "twscript.keyword.control"
                 },
                 {
                     "begin": "{",
                     "end": "}",
-                    "name": "tscript.user.variable",
+                    "name": "twscript.user.variable",
 					"patterns": [
 						{
 							"include": "#SystemVars"
@@ -377,7 +384,7 @@
             ]
         },
         "string": {
-            "name": "tscript.string",
+            "name": "twscript.string",
             "patterns": [
                 {
                     "include": "#qstring-single"
@@ -388,5 +395,5 @@
             ]
         }
     },
-    "scopeName": "source.tscript"
+    "scopeName": "source.twscript"
 }

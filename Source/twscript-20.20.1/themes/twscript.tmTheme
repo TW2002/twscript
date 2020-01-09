@@ -17,7 +17,7 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Variables: Bool</string>
-			<key>scope</key><string>tscript.boolean</string>
+			<key>scope</key><string>twscript.boolean</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key><string>#FFFF00</string>
@@ -25,7 +25,7 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Commands</string>
-			<key>scope</key><string>tscript.commands</string>
+			<key>scope</key><string>twscript.commands</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key><string>#00A0FF</string>
@@ -33,7 +33,7 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Commands</string>
-			<key>scope</key><string>tscript.commands.library</string>
+			<key>scope</key><string>twscript.commands.library</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key><string>#30C0FF</string>
@@ -41,7 +41,7 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Depreciated</string>
-			<key>scope</key><string>tscript.commands.depreciated</string>
+			<key>scope</key><string>twscript.commands.depreciated</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key><string>#FF0000</string>
@@ -49,7 +49,7 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Predefined vars</string>
-			<key>scope</key><string>tscript.predefined.variable</string>
+			<key>scope</key><string>twscript.predefined.variable</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key><string>#FFFF00</string>
@@ -57,7 +57,7 @@
 		</dict>
 		<dict>
 			<key>name</key><string>User vars</string>
-			<key>scope</key><string>tscript.user.variable</string>
+			<key>scope</key><string>twscript.user.variable</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key><string>#60FFFF</string>
@@ -65,7 +65,7 @@
 		</dict>
 		<dict>
 			<key>name</key><string>User labels</string>
-			<key>scope</key><string>tscript.user.labels</string>
+			<key>scope</key><string>twscript.user.labels</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key><string>#FF30FF</string>
@@ -73,7 +73,7 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Operators</string>
-			<key>scope</key><string>tscript.operators</string>
+			<key>scope</key><string>twscript.operators</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key><string>#FF00FF</string>
@@ -83,7 +83,7 @@
 			<key>name</key>
 			<string>Comments</string>
 			<key>scope</key>
-			<string>tscript.comment</string>
+			<string>twscript.comment</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -94,7 +94,7 @@
 			<key>name</key>
 			<string>Digits</string>
 			<key>scope</key>
-			<string>tscript.constant.numeric</string>
+			<string>twscript.constant.numeric</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -105,7 +105,7 @@
 			<key>name</key>
 			<string>Digits</string>
 			<key>scope</key>
-			<string>tscript.string</string>
+			<string>twscript.string</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -116,7 +116,7 @@
 			<key>name</key>
 			<string>Control Statement</string>
 			<key>scope</key>
-			<string>tscript.keyword.control</string>
+			<string>twscript.keyword.control</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
