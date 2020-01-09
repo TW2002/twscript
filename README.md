@@ -22,6 +22,8 @@ Manual Installation:
    You can also use the keyboard shortcut Ctrl+K Ctrl+T to display the picker.<br>
    Select "[TWX] Dark Theme" from the picker.
 
+![image](https://user-images.githubusercontent.com/3355654/72086597-c8b14780-32cc-11ea-86df-c41e1a390b19.png)
+
 ## Features
 
 - Linter - analyzes source code to flag programming errors, bugs, stylistic errors, and suspicious constructs.
